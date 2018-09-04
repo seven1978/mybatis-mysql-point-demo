@@ -1,0 +1,24 @@
+
+spring:
+ #数据库配置
+ datasource:
+  #基本属性
+  name: test
+  url: jdbc:mysql://database.tony.com:3306/aa?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+  username: tony
+  password: tony
+
+## 配置Spring节点为独立节点
+mybatis:
+ #对应mapper映射xml文件的所在路径
+ mapper-locations: classpath:/com/dongnaoedu/mapper/*.xml  
+ #对应实体类的路径
+ type-aliases-package: com.dongnaoedu.model 
+ type-handlers-package: com.dongnaoedu.mybatis.handlers 
+
+pagehelper:
+ helperDialect: mysql
+ reasonable: true
+ supportMethodsArguments: true
+ params: count=countSql
+ 
